@@ -1,0 +1,27 @@
+.game-board{
+  background-color: #f5c0c0;
+}
+
+.memory-card{
+  width: 150px;
+  height: 150px;
+  background-color: #ff7171;
+}
+
+
+.easy-board {
+  display: none;
+}
+
+.medium-board {
+  display: none;
+}
+
+.hard-board {
+  display: none;
+}
+
+/*
+#9fd8df
+
+#f0e4d7 */
