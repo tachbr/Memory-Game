@@ -1,16 +1,42 @@
+body {
+  font-family: 'Luckiest Guy', cursive;
+}
+
+h1 {
+  font-size: 80px;
+  letter-spacing: 4px;
+  margin-top: 0;
+}
+
 .game-board{
-  background-color: #f5c0c0;
+  padding: 20px;
+  border: 10px solid #f5c0c0;
+  background-color: #9fd8df;
 }
 
 .memory-card{
-  width: 150px;
-  height: 150px;
-  background-color: #ff7171;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  display: inline-block;
 }
 
+.start-page {
+  display: none;
+}
+
+.no-click {
+  pointer-events: none;
+}
+
+img {
+  max-height:100%;
+  max-width: 100%;
+}
 
 .easy-board {
-  display: none;
+  /* display: none; */
+  text-align: center;
 }
 
 .medium-board {
@@ -21,7 +47,14 @@
   display: none;
 }
 
+.header {
+  text-align: center;
+  height: 100px;
+  background-color: #ff7171;
+  color: #f0e4d7;
+}
+
 /*
 #9fd8df
 
-#f0e4d7 */
+ */
