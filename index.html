@@ -1,133 +1,84 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <title>Memory Game</title>
   </head>
+
+
   <body>
     <div class="header">
-            <h1>Memory Game</h1>
+      <h1>Memory Game</h1>
     </div>
 
     <div class="start-page">
-      <button type="button" name="button">Easy</button>
-      <button type="button" name="button">Medium</button>
-      <button type="button" name="button">Hard</button>
+      <button type="button" name="button" data-level="16" class="btn">Easy</button>
+      <button type="button" name="button" data-level="32" class="btn">Medium</button>
+      <button type="button" name="button" data-level="64" class="btn">Hard</button>
     </div>
 
 
-    <div class="game-board">
-      <div class="memory-board">
+    <div class="game-board inactive">
 
-        <div class="easy-board">
+      <div class="score-board">
+        <div class="timer-div">
+          <p>Time Taken: <span id="time"></span></p>
+        </div>
+        <div class="score-div">
+          <p>Number of Moves: <span id="moves"></span></p>
+        </div>
+        <div class="pairs-div">
+          <p>Pairs Found: <span id="pairs"></span></p>
+        </div>
+        <div class="restart-div">
+          <button type="button" name="button" class="btn new-game-btn">New Game</button>
+        </div>
+        </div>
 
-          <div class="row">
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-1" data-card="1">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-2" data-card="2">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-3" data-card="3">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-4" data-card="4">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-5" data-card="5">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-6" data-card="6">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-7" data-card="7">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-8" data-card="8">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-9" data-card="9">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-10" data-card="10">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-11" data-card="11">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-12" data-card="12">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-13" data-card="13">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-14" data-card="14">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-15" data-card="15">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" id="easy-card-16" data-card="16">
-            </div>
-          </div>
+        <div class="easy-board inactive">
 
         </div>
 
 
-
-
-
-
-        <div class="medium-board">
-          <div class="row">
-            <div class="memory-card">
-              <img src="images/back.png" alt="" name="medium-card-1" data-card="1">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" name="medium-card-2" data-card="2">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" name="medium-card-3" data-card="3">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" name="medium-card-4" data-card="4">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" name="medium-card-5" data-card="5">
-            </div>
-            <div class="memory-card">
-              <img src="images/back.png" alt="" name="medium-card-6" data-card="6">
-            </div>
-          </div>
-
-
+        <div class="medium-board inactive">
 
         </div>
-        <div class="hard-board">
+
+
+        <div class="hard-board inactive">
 
         </div>
+
+
+        <div class="result-div inactive">
+
+        <div class="result">
+
+        </div>
+        <div class="fastest-time">
+
+        </div>
+
+        <div class="least-moves">
+
+        </div>
+
 
       </div>
 
-    </div>
+      </div>
 
 
 
-<a href='https://www.freepik.com/vectors/food'>Food vector created by freepik - www.freepik.com</a>
-<a href='https://www.freepik.com/vectors/food'>Food vector created by freepik - www.freepik.com</a>
+<div class="attributes">
+  <a href='https://www.freepik.com/vectors/food'>Food vector created by freepik - www.freepik.com</a>
+</div>
+
     <script type="text/javascript" src="index.js">
 
     </script>

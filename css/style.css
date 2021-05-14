@@ -12,17 +12,73 @@ h1 {
   padding: 20px;
   border: 10px solid #f5c0c0;
   background-color: #9fd8df;
+  display: flex;
 }
 
 .memory-card{
   width: 100px;
   height: 100px;
   margin: 5px;
+  box-shadow: 5px 5px 5px gray;
   display: inline-block;
 }
 
-.start-page {
+.memory-card-md{
+  width: 80px;
+  height: 80px;
+  margin: 3px;
+  box-shadow: 3px 3px 3px gray;
+  display: inline-block;
+}
+
+.memory-card-lg{
+  width: 60px;
+  height: 60px;
+  margin: 2px;
+  box-shadow: 2px 2px 2px gray;
+  display: inline-block;
+}
+
+.inactive {
   display: none;
+}
+
+.start-page {
+  text-align: center;
+  padding: 70px;
+  background-color: #f5c0c0;
+}
+
+.btn {
+  border-radius: 15px;
+  line-height: 3;
+  width: 200px;
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
+  font-weight: bold;
+  border:#1597bb 2px solid;
+  box-shadow: 5px 5px 5px gray;
+  background-color: #9fd8df;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+
+.new-game-btn {
+  border: #ff7171 2px solid;
+  background-color: #f5c0c0;
+
+}
+
+.attributes {
+  text-align: center;
+  background-color: #f0e4d7;
+  padding: 20px;
+}
+
+a {
+  color:#1597bb;
 }
 
 .no-click {
@@ -35,16 +91,15 @@ img {
 }
 
 .easy-board {
-  /* display: none; */
-  text-align: center;
+  margin: auto;
 }
 
 .medium-board {
-  display: none;
+  margin: auto;
 }
 
 .hard-board {
-  display: none;
+  margin: auto;
 }
 
 .header {
@@ -52,6 +107,44 @@ img {
   height: 100px;
   background-color: #ff7171;
   color: #f0e4d7;
+}
+
+.score-board {
+  width:40%;
+}
+
+.result-div {
+  width: 30%;
+}
+
+.timer-div, .score-div, .pairs-div {
+  border-radius: 20px;
+  background-color: #f0e4d7;
+  color: #ff7171;
+  box-shadow: 3px 3px 5px;
+  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  max-width:80%;
+  padding-left: 20px;
+  line-height: 2;
+  margin: auto;
+}
+
+#time, #moves, #pairs {
+  font-weight: bold;
+  font-size: 1.7rem;
+  color: #1597bb;
+}
+
+.fastest-time, .least-moves {
+  border-radius: 20px;
+  background-color: #f0e4d7;
+  color: #1597bb ;
+  box-shadow: 3px 3px 5px #ff7171;
+  padding-left: 20px;
+  max-width: 80%;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 20px;
 }
 
 /*
