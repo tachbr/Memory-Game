@@ -16,9 +16,6 @@ const easyBoard = document.querySelector('.easy-board');
 const mediumBoard = document.querySelector('.medium-board');
 const hardBoard = document.querySelector('.hard-board');
 
-
-
-
 const newGameButton = document.querySelector('.new-game-btn');
 const homeButton = document.querySelector('.home-btn');
 const scoreButton = document.querySelector('.score-btn');
@@ -34,11 +31,9 @@ hardBoard.addEventListener('click', onClick);
 
 
 function onClick(event){
-  console.log(event.target.dataset.card);
-  console.log(event.target.parentNode.parentNode);
+
   if (event.target.dataset.card) {
     event.target.classList.add('no-click');
-    // turnCardUp(event.target.dataset.card);
     turnCardUp(event.target);
   }
 }
@@ -157,7 +152,7 @@ function startTimer() {
       newGame.minutes++;
       newGame.seconds = 0;
     }
-    let timeString = parseInt(newGame.minutes/10) == 0 ? '0' + newGame.minutes + ':' : newGame.minutes + '0';
+    let timeString = parseInt(newGame.minutes/10) == 0 ? '0' + newGame.minutes + ':' : newGame.minutes + ':';
     timeString += parseInt(newGame.seconds/10) == 0 ? '0' + newGame.seconds : newGame.seconds;
     document.getElementById('time').textContent = timeString;
   }, 1000);
@@ -181,7 +176,6 @@ function MemoryGame(level) {
     this.checkCards = [];
     this.foundPairs = 0;
     this.timer;
-    this.imgCardID;
     this.board;
     this.seconds;
     this.minutes;
@@ -189,7 +183,6 @@ function MemoryGame(level) {
 
     switch(level){
       case(16):
-        this.imgCardID = 'easy-card-';
         this.width = 4;
         this.height = 4;
         this.memoryCard = 'memory-card';
@@ -197,7 +190,6 @@ function MemoryGame(level) {
         this.board.classList.remove('inactive');
         break;
       case(32):
-        this.imgCardID = 'medium-card-';
         this.width = 8;
         this.height = 4;
         this.memoryCard = 'memory-card-md';
@@ -205,7 +197,6 @@ function MemoryGame(level) {
         this.board.classList.remove('inactive');
         break;
       case(64):
-        this.imgCardID = 'hard-card-';
         this.width = 8;
         this.height = 8;
         this.memoryCard = 'memory-card-lg';
@@ -213,7 +204,6 @@ function MemoryGame(level) {
         this.board.classList.remove('inactive');
         break;
       default:
-        this.imgCardID = 'easy-card-';
         this.board = easyBoard;
         this.board.classList.remove('inactive');
         break;
@@ -350,7 +340,11 @@ function displayLeastMoves(scoreArray, level) {
     row.append(moveDiv);
 
     let timeDiv = document.createElement('div');
-    let timeString = Math.floor(parseInt(score.time) / 60) + ':' + parseInt(score.time) % 60;
+    let timeString = Math.floor(parseInt(score.time) / 60) + ':';
+    if (parseInt(score.time) % 60 < 10) {
+      timeString += '0';
+    }
+    timeString += parseInt(score.time) % 60;
     timeDiv.textContent = timeString;
     row.append(timeDiv);
 
@@ -389,7 +383,11 @@ function displayFastestTimes(scoreArray, level) {
     nameDiv.textContent = score.name;
     row.append(nameDiv);
     let timeDiv = document.createElement('div');
-    let timeString = Math.floor(parseInt(score.time) / 60) + ':' + parseInt(score.time) % 60;
+    let timeString = Math.floor(parseInt(score.time) / 60) + ':';
+    if (parseInt(score.time) % 60 < 10) {
+      timeString += '0';
+    }
+    timeString += parseInt(score.time) % 60;
     timeDiv.textContent = timeString;
     row.append(timeDiv);
     let moveDiv = document.createElement('div');
@@ -433,6 +431,9 @@ function hasWon() {
   stopTimer();
   cheerSound.play();
   let userName = prompt("Please enter your name");
+  if (userName.length > 10) {
+    userName = userName.slice(0, 10);
+  }
   let gameScore = new Score(userName, newGame.deckSize, newGame.time, newGame.moves);
   console.log(gameScore);
   let currentFastestScores = getScores(gameScore.level, 'time');
@@ -450,8 +451,6 @@ function hasWon() {
 //change identifier in game object to front and back
 
 function turnCardUp(numCard) {
-  console.log(numCard);
-  console.log(numCard.dataset.card);
 
   // let imgCard = newGame.imgCardID + numCard;
   let imgCard = 'back' + numCard.dataset.card;
@@ -497,7 +496,7 @@ function compareCards() {
     newGame.board.classList.remove('no-click');
   }
   else {
-    setTimeout(turnCardDown, 1500);
+    setTimeout(turnCardDown, 1000);
   }
 }
 
